@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abhay's BMI Calculator WebApp</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<h1>BMI Calculator</h1>
+<body>
+
+    <div class="main">
+      <form class = "pure-form" method = 'POST' action = "/">
+          Enter your weight in kgs : <br>
+          <input type = text name="weight"><span class="pure-form-message-inline">This is a required field.</span>
+          <br>
+
+          Enter your height in cms : <br>
+          <input type="text" name="height"><span class="pure-form-message-inline">This is a required field.</span>
+          <br>
+
+          <button type="submit" class="pure-button pure-button-primary" value = "Submit">Submit </button>
+      </form>
+    </div>
+
+    <br>
+
+    <div class="main">
+        {% if bmi %}
+        <p>Your BMI is {{bmi}}</p>
+        {% endif %}
+    </div>
+
+
+</body>
+
+
+</html>
